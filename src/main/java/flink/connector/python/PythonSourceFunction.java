@@ -48,6 +48,7 @@ public class PythonSourceFunction extends RichSourceFunction<RowData> {
 
     @Override
     public void run(SourceContext<RowData> ctx) {
+        // todo auto get site-packages
         PythonInterpreterConfig config = PythonInterpreterConfig.newBuilder()
                 .setPythonExec(pythonExec)
                 .addPythonPaths(pythonPaths)
@@ -71,5 +72,4 @@ public class PythonSourceFunction extends RichSourceFunction<RowData> {
             currentInterpreter.close();
         }
     }
-
 }
